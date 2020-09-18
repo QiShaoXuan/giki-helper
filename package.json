@@ -1,6 +1,6 @@
 {
   "name": "giki-helper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "通过命令行辅助 [giki](https://giki.app/) 操作。",
   "bin": {
     "giki": "bin/giki.js"
