@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/QiShaoXuan/giki-helper#readme",
   "dependencies": {
+    "axios": "^0.20.0",
     "camelize": "^1.0.0",
     "chalk": "^4.1.0",
     "commander": "^6.0.0",
