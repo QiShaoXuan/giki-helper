@@ -1,18 +1,20 @@
-const axios = require("axios");
-const { token, userName } = require("./private-config");
+const api = require('../api')
 
 const getUserInfo = () => {
-  axios
-    .get("https://giki.app/api/users/query?name=qi", {
-      name: userName,
-      headers: { authorization: token }
+  api
+    .login()
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(`login failed: ${res.status}`)
+      }
+      return res.json()
     })
-    .then(res => {
-      console.log("res", res.data);
+    .then((data) => {
+      console.log(`login ok: ${data}`)
     })
-    .catch(error => {
-      console.log(error);
-    });
-};
+    .catch((e) => {
+      console.warn(`error when login: ${e}`)
+    })
+}
 
-module.exports = getUserInfo;
+module.exports = getUserInfo
